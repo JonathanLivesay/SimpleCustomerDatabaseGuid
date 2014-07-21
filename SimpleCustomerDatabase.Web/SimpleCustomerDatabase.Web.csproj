@@ -230,6 +230,12 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SimpleCustomerDatabase.Domain\SimpleCustomerDatabase.Domain.csproj">
+      <Project>{f1028586-6191-46c3-ba63-6b16c3f6fda5}</Project>
+      <Name>SimpleCustomerDatabase.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
