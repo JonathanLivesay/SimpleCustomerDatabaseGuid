@@ -170,6 +170,9 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\foundation.css" />
+    <Content Include="Content\css\foundation.min.css" />
+    <Content Include="Content\css\normalize.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -224,7 +227,9 @@
     <Content Include="sass\_foundation.scss" />
     <Content Include="sass\_foundation.mvc.scss" />
     <Content Include="App_Readme\Foundation_readme.md" />
+    <Content Include="Content\img\.gitkeep" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\foundation.min.js" />
     <Content Include="Scripts\foundation\fastclick.js" />
     <Content Include="Scripts\foundation\foundation.abide.js" />
     <Content Include="Scripts\foundation\foundation.accordion.js" />
@@ -254,6 +259,11 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\vendor\fastclick.js" />
+    <Content Include="Scripts\vendor\jquery.cookie.js" />
+    <Content Include="Scripts\vendor\jquery.js" />
+    <Content Include="Scripts\vendor\modernizr.js" />
+    <Content Include="Scripts\vendor\placeholder.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
