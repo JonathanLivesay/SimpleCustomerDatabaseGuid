@@ -83,10 +83,20 @@
             <a class="exit-off-canvas" href="#"></a>
             <!--PUT ALL UP IN _FOUNDATION-->
             @RenderBody()
+
+
+
+            @Scripts.Render("~/bundles/jquery")
+            @Scripts.Render("~/bundles/foundation")
+            <script>
+                $(document).foundation();
+            </script>
+            @*Use the Scripts section to define page specific scripts*@
+            @RenderSection("scripts", required: false)
         </div><!--off-canvas inner-->
     </div><!--off-canvas wrap-->
 
 
 
 </body>
-</html>
+    </html>
