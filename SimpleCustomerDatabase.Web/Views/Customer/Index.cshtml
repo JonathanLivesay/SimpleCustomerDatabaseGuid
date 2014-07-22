@@ -1,5 +1,49 @@
-﻿@{
+﻿@model SimpleCustomerDatabase.Web.Models.CustomerModels
+
+@{
+
     Layout = "~/Views/Shared/_Layout.cshtml";
+    @ViewBag.Title = "Customer View"
 }
 
 
+@foreach (var customer in Model.Customers)
+{
+    
+    <div>
+         <fieldset>
+
+             <div class="display-label">Customer Id</div>
+             <div class="display-field">@customer.Id</div>
+
+             <div class="display-label">FirsName</div>
+             <div class="display-field">@customer.FirstName</div>
+
+             <div class=" display-label">Last Name</div>
+             <div class="display-field">@customer.LastName</div>
+
+             <div class=" display-label">Phone</div>
+             <div class="display-field">@customer.PhoneNumber</div>
+
+             <div class=" display-label">Email</div>
+             <div class="display-field">@customer.Email</div>
+
+             <div class=" display-label">Street1</div>
+             <div class="display-field">@customer.CompanyStreet1</div>
+
+             <div class=" display-label">Street2</div>
+             <div class="display-field">@customer.CompanyStreet2</div>
+
+             <div class=" display-label">City</div>
+             <div class="display-field">@customer.CompanyCity</div>
+
+             <div class=" display-label">State</div>
+             <div class="display-field">@customer.CompanyState</div>
+
+             <div class=" display-label">Postal Code</div>
+             <div class="display-field">@customer.CompanyPostalCode</div>
+
+
+         </fieldset>
+    </div>
+}
