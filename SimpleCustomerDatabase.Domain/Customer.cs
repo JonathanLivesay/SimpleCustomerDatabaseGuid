@@ -8,23 +8,7 @@ namespace SimpleCustomerDatabase.Domain
 {
     public class Customer
     {
-        private Guid id;
-        public Guid Id
-        {
-            get
-            {
-                if (id != null)
-                    return id;
-                else
-                    id = Guid.NewGuid();
-
-                return id;
-            }
-            set 
-            {
-                id = value;
-            }
-        }
+        public Guid Id { get; set; } 
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
