@@ -11,6 +11,13 @@ namespace SimpleCustomerDatabase.Web.Controllers
 {
     public class CustomerController : Controller
     {
+
+        public CustomerController(Customer customer)
+        {
+            this.Customer = customer;
+        }
+
+        public Customer Customer { get; set; }
         
 
         // GET: Customer
