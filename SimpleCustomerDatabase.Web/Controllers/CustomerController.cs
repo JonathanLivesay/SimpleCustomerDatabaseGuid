@@ -3,14 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using SimpleCustomerDatabase.Domain;
+using SimpleCustomerDatabase.Web.Models;
+using Highway.Data;
 
 namespace SimpleCustomerDatabase.Web.Controllers
 {
     public class CustomerController : Controller
     {
+        
+
         // GET: Customer
         public ActionResult Index()
         {
+            var customerModel = new CustomerModels();
+            
+            string connectionString = "Server=.;Database=SimpleCustomerDatabase_db;Integrated Security=true";
+            MappingConfig mappingConfig = new MappingConfig();
+            DataContext context = new DataContext(connectionString, mappingConfig);
+            Repository repo = new Repository(context);
+
+
+
             return View();
         }
 

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SimpleCustomerDatabase.Domain
 {
-    class MappingConfig : IMappingConfiguration
+    public class MappingConfig : IMappingConfiguration
     {
         public void ConfigureModelBuilder(DbModelBuilder modelBuilder)
         {

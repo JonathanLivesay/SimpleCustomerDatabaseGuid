@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using SimpleCustomerDatabase.Domain;
+using Highway.Data;
+
+
 namespace SimpleCustomerDatabase.Web.Models
 {
     public class CustomerModels
@@ -26,6 +29,8 @@ namespace SimpleCustomerDatabase.Web.Models
             	customers = value;
             }
         }
+
+        
 
     }
 }
