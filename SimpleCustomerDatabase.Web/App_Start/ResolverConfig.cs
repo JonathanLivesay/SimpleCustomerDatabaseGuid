@@ -10,7 +10,7 @@ using SimpleCustomerDatabase.Web.Controllers;
 using SimpleCustomerDatabase.Domain;
 
 
-namespace SimpleCustomerDatabase.Web.App_Start
+namespace SimpleCustomerDatabase.Web.App_Start 
 {
     public class ResolverConfig
     {
@@ -43,9 +43,7 @@ namespace SimpleCustomerDatabase.Web.App_Start
                     CompanyState = "TX",
                     CompanyPostalCode = "75087",
                 };
-
         }
-        
-        
+
     }
 }
