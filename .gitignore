@@ -6,6 +6,9 @@
 *.exe
 !NuGet.exe
 *packages/
+*.nunit
+nunit/*
+
 
 # User-specific files
 *.suo

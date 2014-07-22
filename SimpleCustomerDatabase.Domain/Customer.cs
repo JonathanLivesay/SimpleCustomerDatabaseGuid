@@ -10,5 +10,21 @@ namespace SimpleCustomerDatabase.Domain
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
+
+        public string CompanyName { get; set; }
+
+        public string Email { get; set; }
+
+        public string PhoneNumber { get; set; }
+
+        public string CompanyStreet1 { get; set; }
+
+        public string CompanyStreet2 { get; set; }
+
+        public string CompanyCity { get; set; }
+
+        public string CompanyState { get; set; }
+
+        public string CompanyPostalCode { get; set; }
     }
 }

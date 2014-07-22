@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="When_A_Customer_Logs_In.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="When_A_New_Customer_Is_Created.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SimpleCustomerDatabase.Domain\SimpleCustomerDatabase.Domain.csproj">
