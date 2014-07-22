@@ -10,6 +10,8 @@ namespace SimpleCustomerDatabase.Web.Controllers
     {
         public ActionResult Index()
         {
+
+
             return View();
         }
 

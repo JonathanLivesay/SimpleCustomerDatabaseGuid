@@ -42,20 +42,38 @@ namespace SimpleCustomerDatabase.Domain.Tests
         {
             Assert.IsNotNullOrEmpty(customer.LastName);
         }
+
         [Test]
         public void CompanyName_Should_Not_Be_Blank()
         {
             Assert.IsNotNullOrEmpty(customer.CompanyName);
         }
+
         [Test]
         public void Email_Should_Not_Be_Blank()
         {
             Assert.IsNotNullOrEmpty(customer.Email);
         }
+
         [Test]
         public void PhoneNumber_Should_Not_Be_Blank()
         {
             Assert.IsNotNullOrEmpty(customer.PhoneNumber);
+        }
+
+        [Test]
+        public void PhoneNumber_Should_Only_Have_10_Characters()
+        {
+            string[] number = customer.PhoneNumber.Split('.');
+            string numberWithoutSeparators = string.Join("", number);
+
+            Assert.IsTrue(numberWithoutSeparators.Length == 10);
+        }
+
+        [Test]
+        public void Id_Should_Not_Be_Null()
+        {
+            Assert.IsNotNull(customer.Id);
         }
 
 
