@@ -18,7 +18,7 @@ namespace SimpleCustomerDatabase.Web.Controllers
         }
 
         public Customer Customer { get; set; }
-        
+
 
         // GET: Customer
         public ActionResult Index()
@@ -30,9 +30,9 @@ namespace SimpleCustomerDatabase.Web.Controllers
             DataContext context = new DataContext(connectionString, mappingConfig);
             Repository repo = new Repository(context);
 
+            customerModel.Customers.Add(Customer);
 
-
-            return View();
+            return View(customerModel);
         }
 
         // GET: Customer/Details/5

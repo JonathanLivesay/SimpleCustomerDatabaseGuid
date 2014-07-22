@@ -14,7 +14,7 @@ namespace SimpleCustomerDatabase.Web.App_Start
 {
     public class ResolverConfig
     {
-        public static SimpleCustomerDatabase.Domain.Customer instance;
+        public static Customer instance;
 
         public static void Register()
         {
