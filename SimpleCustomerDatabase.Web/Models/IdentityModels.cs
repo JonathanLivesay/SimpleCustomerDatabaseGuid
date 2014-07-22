@@ -28,5 +28,7 @@ namespace SimpleCustomerDatabase.Web.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<SimpleCustomerDatabase.Domain.Customer> Customers { get; set; }
     }
 }
