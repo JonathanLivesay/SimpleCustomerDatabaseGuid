@@ -19,6 +19,8 @@ namespace SimpleCustomerDatabase.Web.App_Start
         public static void Register()
         {
 
+            CreateDummyCustomer();
+
             var builder = new ContainerBuilder();
             builder.RegisterControllers(typeof(ResolverConfig).Assembly);
             builder.Register<SimpleCustomerDatabase.Domain.Customer>(c => instance);

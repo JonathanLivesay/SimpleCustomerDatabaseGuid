@@ -32,6 +32,11 @@ namespace SimpleCustomerDatabase.Web.Controllers
 
             customerModel.Customers.Add(Customer);
 
+            foreach (var customer in customerModel.Customers)
+                repo.Context.Add<Customer>(customer);
+
+            repo.Context.Commit();
+            
             return View(customerModel);
         }
 
