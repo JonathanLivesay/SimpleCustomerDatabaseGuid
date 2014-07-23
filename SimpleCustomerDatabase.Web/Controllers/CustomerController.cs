@@ -17,6 +17,7 @@ namespace SimpleCustomerDatabase.Web.Controllers
         public CustomerController(Customer customer)
         {
             this.Customer = customer;
+            //string connectionString = "Server=.;Database=SimpleCustomerDatabase_db;Integrated Security=true";
             string connectionString = "Data Source=tcp:vsv9sujxvr.database.windows.net,1433;Initial Catalog=simplecustomerdatabase_db;User ID=DatabaseUser135@vsv9sujxvr;Password=13579CustomerDatabase!";
             MappingConfig mappingConfig = new MappingConfig();
             DataContext context = new DataContext(connectionString, mappingConfig);
@@ -29,14 +30,9 @@ namespace SimpleCustomerDatabase.Web.Controllers
         // GET: Customer
         public ActionResult Index()
         {
+
             var customerModel = new CustomerModels();
             
-            //string connectionString = "Server=.;Database=SimpleCustomerDatabase_db;Integrated Security=true";
-            //string connectionString = "Data Source=tcp:vsv9sujxvr.database.windows.net,1433;Initial Catalog=simplecustomerdatabase_db;User ID=DatabaseUser135@vsv9sujxvr;Password=13579CustomerDatabase!";
-            //MappingConfig mappingConfig = new MappingConfig();
-            //DataContext context = new DataContext(connectionString, mappingConfig);
-            //Repository repo = new Repository(context);
-
             customerModel.Customers = repo.Find(new FindAll<Customer>()).ToList();
 
             if (customerModel.Customers.Count == 0)

@@ -19,7 +19,7 @@ namespace SimpleCustomerDatabase.Web.App_Start
         public static void Register()
         {
 
-            CreateDummyCustomer();
+            CreateDummyCustomer1();
 
             var builder = new ContainerBuilder();
             builder.RegisterControllers(typeof(ResolverConfig).Assembly);
@@ -29,7 +29,7 @@ namespace SimpleCustomerDatabase.Web.App_Start
 
         }
 
-        private static void CreateDummyCustomer()
+        private static void CreateDummyCustomer1()
         {
 
             instance = new Customer()
@@ -45,6 +45,24 @@ namespace SimpleCustomerDatabase.Web.App_Start
                     CompanyState = "TX",
                     CompanyPostalCode = "75087",
                 };
+        }
+
+        private static void CreateDummyCustomer2()
+        {
+
+            instance = new Customer()
+            {
+                FirstName = "Bad",
+                LastName = "Guy",
+                Email = "Bad.Guy@customer.com",
+                PhoneNumber = "214.555.1212",
+                CompanyName = "Company Work",
+                CompanyStreet1 = "1233 Victory Way",
+                CompanyStreet2 = "Suite 400",
+                CompanyCity = "Addison",
+                CompanyState = "TX",
+                CompanyPostalCode = "75001",
+            };
         }
 
     }
