@@ -39,7 +39,6 @@ namespace SimpleCustomerDatabase.Web.Controllers
                 
                 foreach (var customer in customerModel.Customers)
                     repo.Context.Add<Customer>(customer);
-
             } 
                
             repo.Context.Commit();
