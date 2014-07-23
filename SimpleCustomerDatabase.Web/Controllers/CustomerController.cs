@@ -18,8 +18,8 @@ namespace SimpleCustomerDatabase.Web.Controllers
         public CustomerController(Customer customer)
         {
             this.Customer = customer;
-            string connectionString = "Server=.;Database=SimpleCustomerDatabase_db;Integrated Security=true";
-            //string connectionString = "Data Source=tcp:vsv9sujxvr.database.windows.net,1433;Initial Catalog=simplecustomerdatabase_db;User ID=DatabaseUser135@vsv9sujxvr;Password=13579CustomerDatabase!";
+            //string connectionString = "Server=.;Database=SimpleCustomerDatabase_db;Integrated Security=true";
+            string connectionString = "Data Source=tcp:vsv9sujxvr.database.windows.net,1433;Initial Catalog=simplecustomerdatabase_db;User ID=DatabaseUser135@vsv9sujxvr;Password=13579CustomerDatabase!";
             MappingConfig mappingConfig = new MappingConfig();
             DataContext context = new DataContext(connectionString, mappingConfig);
             repo = new Repository(context);
@@ -69,8 +69,6 @@ namespace SimpleCustomerDatabase.Web.Controllers
         [HttpPost]
         public ActionResult Create(Customer customer)
         {
-
-            customerModel.Customers.Add(customer);
 
             repo.Context.Add<Customer>(customer);
 
