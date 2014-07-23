@@ -25,15 +25,13 @@ namespace SimpleCustomerDatabase.Web.Controllers
         {
             var customerModel = new CustomerModels();
             
-            string connectionString = "Server=.;Database=SimpleCustomerDatabase_db;Integrated Security=true";
+            //string connectionString = "Server=.;Database=SimpleCustomerDatabase_db;Integrated Security=true";
+            string connectionString = "Data Source=tcp:vsv9sujxvr.database.windows.net,1433;Initial Catalog=simplecustomerdatabase_db;User ID=DatabaseUser135@vsv9sujxvr;Password=13579CustomerDatabase!";
             MappingConfig mappingConfig = new MappingConfig();
             DataContext context = new DataContext(connectionString, mappingConfig);
             Repository repo = new Repository(context);
 
-            customerModel.Customers.Add(Customer);
-
-            foreach (var customer in customerModel.Customers)
-                repo.Context.Add<Customer>(customer);
+            customerModel.Customers = repo.Find(new FindAll<Customer>()).ToList();
 
             repo.Context.Commit();
             
