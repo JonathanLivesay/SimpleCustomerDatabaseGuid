@@ -45,7 +45,7 @@
              <div class="display-field">@customer.CompanyPostalCode</div>
 
              <div class="button-group" style="float:right">
-                 <input value="Details" type="submit" name="Details" class="small radius button" />
+                    @Html.ActionLink("Details", "Details", "Customer", new { id = customer.Id }, new { @class = "small radius button" })
              </div>
 
          </fieldset>

@@ -56,7 +56,7 @@ namespace SimpleCustomerDatabase.Web.Controllers
 
             //return RedirectToAction("Edit", "Customer", customer);
 
-            return View(customer);
+            return View("Details", customer);
         }
 
         // GET: Customer/Create
