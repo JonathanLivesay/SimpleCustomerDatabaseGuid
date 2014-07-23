@@ -12,7 +12,7 @@ namespace SimpleCustomerDatabase.Web.Controllers
     public class CustomerController : Controller
     {
 
-        private CustomerModels customerModel;
+        // private CustomerModels customerModel;
         private Repository repo;
 
         public CustomerController(Customer customer)
@@ -32,7 +32,7 @@ namespace SimpleCustomerDatabase.Web.Controllers
         public ActionResult Index()
         {
 
-            customerModel = new CustomerModels();
+            var customerModel = new CustomerModels();
             
             customerModel.Customers = repo.Find(new FindAll<Customer>()).ToList();
 
