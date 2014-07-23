@@ -22,7 +22,6 @@ namespace SimpleCustomerDatabase.Domain
             modelBuilder.Entity<Customer>().Property(c => c.FirstName).IsRequired();
             modelBuilder.Entity<Customer>().Property(c => c.Email).IsRequired();
         }
-
     }
 }
     
