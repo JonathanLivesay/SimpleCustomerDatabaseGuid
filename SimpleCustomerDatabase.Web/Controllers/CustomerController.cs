@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using SimpleCustomerDatabase.Domain;
 using SimpleCustomerDatabase.Web.Models;
+using SimpleCustomerDatabase.Web.Persistence;
 using Highway.Data;
 
 namespace SimpleCustomerDatabase.Web.Controllers
@@ -31,7 +32,6 @@ namespace SimpleCustomerDatabase.Web.Controllers
         // GET: Customer
         public ActionResult Index()
         {
-
             var customerModel = new CustomerModels();
             
             customerModel.Customers = repo.Find(new FindAll<Customer>()).ToList();
@@ -52,9 +52,11 @@ namespace SimpleCustomerDatabase.Web.Controllers
         // GET: Customer/Details/5
         public ActionResult Details(int id)
         {
-            
-            
-            return View();
+            Customer customer = repo.Find(new FindById(id));
+
+            //return RedirectToAction("Edit", "Customer", customer);
+
+            return View(customer);
         }
 
         // GET: Customer/Create
@@ -76,9 +78,6 @@ namespace SimpleCustomerDatabase.Web.Controllers
 
             return RedirectToAction("Index","Customer");
 
-        }
-
-
             //try
             //{
             //    // TODO: Add insert logic here
@@ -89,7 +88,7 @@ namespace SimpleCustomerDatabase.Web.Controllers
             //{
             //    return View();
             //}
-        //}
+        }
 
         // GET: Customer/Edit/5
         public ActionResult Edit(int id)
@@ -121,18 +120,24 @@ namespace SimpleCustomerDatabase.Web.Controllers
 
         // POST: Customer/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(Customer customer)
         {
-            try
-            {
-                // TODO: Add delete logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+
+
+            return RedirectToAction("Index", "Customer");
+            
+
+            //try
+            //{
+            //    // TODO: Add delete logic here
+
+            //    return RedirectToAction("Index");
+            //}
+            //catch
+            //{
+            //    return View();
+            //}
         }
     }
 }
