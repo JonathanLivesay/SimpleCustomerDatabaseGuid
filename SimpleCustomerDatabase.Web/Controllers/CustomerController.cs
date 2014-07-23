@@ -15,12 +15,19 @@ namespace SimpleCustomerDatabase.Web.Controllers
 
         // private CustomerModels customerModel;
         private Repository repo;
+        private string connectionString;
+
+        private bool serverConnection = false;
 
         public CustomerController(Customer customer)
         {
             this.Customer = customer;
-            //string connectionString = "Server=.;Database=SimpleCustomerDatabase_db;Integrated Security=true";
-            string connectionString = "Data Source=tcp:vsv9sujxvr.database.windows.net,1433;Initial Catalog=simplecustomerdatabase_db;User ID=DatabaseUser135@vsv9sujxvr;Password=13579CustomerDatabase!";
+
+            if (serverConnection == true)
+                connectionString = "Data Source=tcp:vsv9sujxvr.database.windows.net,1433;Initial Catalog=simplecustomerdatabase_db;User ID=DatabaseUser135@vsv9sujxvr;Password=13579CustomerDatabase!";
+            else 
+                connectionString = "Server=.;Database=SimpleCustomerDatabase_db;Integrated Security=true";
+            
             MappingConfig mappingConfig = new MappingConfig();
             DataContext context = new DataContext(connectionString, mappingConfig);
             repo = new Repository(context);
@@ -93,7 +100,11 @@ namespace SimpleCustomerDatabase.Web.Controllers
         // GET: Customer/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            Customer customer = repo.Find(new FindById(id));
+
+            return View("Edit", customer);
+
+
         }
 
         // POST: Customer/Edit/5
