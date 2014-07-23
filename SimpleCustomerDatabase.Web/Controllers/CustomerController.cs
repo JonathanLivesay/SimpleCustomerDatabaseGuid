@@ -12,13 +12,14 @@ namespace SimpleCustomerDatabase.Web.Controllers
     public class CustomerController : Controller
     {
 
-        Repository repo;
+        private CustomerModels customerModel;
+        private Repository repo;
 
         public CustomerController(Customer customer)
         {
             this.Customer = customer;
-            //string connectionString = "Server=.;Database=SimpleCustomerDatabase_db;Integrated Security=true";
-            string connectionString = "Data Source=tcp:vsv9sujxvr.database.windows.net,1433;Initial Catalog=simplecustomerdatabase_db;User ID=DatabaseUser135@vsv9sujxvr;Password=13579CustomerDatabase!";
+            string connectionString = "Server=.;Database=SimpleCustomerDatabase_db;Integrated Security=true";
+            //string connectionString = "Data Source=tcp:vsv9sujxvr.database.windows.net,1433;Initial Catalog=simplecustomerdatabase_db;User ID=DatabaseUser135@vsv9sujxvr;Password=13579CustomerDatabase!";
             MappingConfig mappingConfig = new MappingConfig();
             DataContext context = new DataContext(connectionString, mappingConfig);
             repo = new Repository(context);
@@ -51,30 +52,46 @@ namespace SimpleCustomerDatabase.Web.Controllers
         // GET: Customer/Details/5
         public ActionResult Details(int id)
         {
+            
+            
             return View();
         }
 
         // GET: Customer/Create
         public ActionResult Create()
         {
+
+
             return View();
         }
 
         // POST: Customer/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Customer customer)
         {
-            try
-            {
-                // TODO: Add insert logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            customerModel.Customers.Add(customer);
+
+            repo.Context.Add<Customer>(customer);
+
+            repo.Context.Commit();
+
+            return RedirectToAction("Index","Customer");
+
         }
+
+
+            //try
+            //{
+            //    // TODO: Add insert logic here
+
+            //    return RedirectToAction("Index");
+            //}
+            //catch
+            //{
+            //    return View();
+            //}
+        //}
 
         // GET: Customer/Edit/5
         public ActionResult Edit(int id)
