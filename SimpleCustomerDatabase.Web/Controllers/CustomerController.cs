@@ -17,7 +17,7 @@ namespace SimpleCustomerDatabase.Web.Controllers
         private Repository repo;
         private string connectionString;
 
-        private bool serverConnection = true;
+        private bool serverConnection = false;
 
         public CustomerController(Customer customer)
         {
@@ -124,19 +124,25 @@ namespace SimpleCustomerDatabase.Web.Controllers
         }
 
         // GET: Customer/Delete/5
-        public ActionResult Delete(int id)
+        [HttpGet]
+        public ActionResult DeleteConfirm(int id)
         {
-            return View();
+            var customer = repo.Find(new FindById(id));
+
+            return View("Delete", customer);
         }
 
         // POST: Customer/Delete/5
         [HttpPost]
-        public ActionResult Delete(Customer customer)
+        public ActionResult Delete(int id)
         {
+            var customer = repo.Find(new FindById(id));
 
+            repo.Context.Remove(customer);
+            
+            repo.Context.Commit();
 
-
-            return RedirectToAction("Index", "Customer");
+            return View("Index");
             
 
             //try
