@@ -17,7 +17,7 @@ namespace SimpleCustomerDatabase.Web.Controllers
         private Repository repo;
         private string connectionString;
 
-        private bool serverConnection = false;
+        private bool serverConnection = true;
 
         public CustomerController(Customer customer)
         {
