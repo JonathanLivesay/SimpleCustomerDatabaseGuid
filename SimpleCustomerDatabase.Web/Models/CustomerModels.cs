@@ -30,9 +30,5 @@ namespace SimpleCustomerDatabase.Web.Models
             }
         }
 
-
-
-        
-
     }
 }
