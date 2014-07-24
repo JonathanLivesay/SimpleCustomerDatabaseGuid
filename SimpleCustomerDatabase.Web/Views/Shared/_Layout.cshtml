@@ -68,8 +68,6 @@
                             <li class="has-dropdown">
                                 <a href="#" class="">Home</a>
                                 <ul class="dropdown">
-                                    <li><a href="#">Overview</a></li>
-                                    <li><a href="#">Contact</a></li>
                                     <li><a href="/Customer/Index">Customer</a></li>
                                     <li><a href="/Customer/Create">Create Customer</a></li>
                                 </ul>
@@ -84,8 +82,12 @@
             </div>
             <a class="exit-off-canvas" href="#"></a>
             <!--PUT ALL UP IN _FOUNDATION-->
-            @RenderBody()
 
+            <div class="row">
+                <div class="large large-12 columns">
+                    @RenderBody()
+                </div>
+            </div>
 
 
             @Scripts.Render("~/bundles/jquery")

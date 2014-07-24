@@ -5,6 +5,18 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Customer View";
 }
+
+<h2 class="text-center">Simple Customer Database List</h2>
+
+<div>
+    <div>
+        <div class="panel">
+            <p>Welcome to the customer database</p>
+        </div>
+    </div>
+</div>
+
+
 <div class="columns medium-10">
 
     <table class="table table-striped table-hover">
@@ -36,52 +48,3 @@
 
 </div>
 
-<div>
-    <hr>
-    <p>Trying something new above this line</p>
-</div>
-
-@*@foreach (var customer2 in Model.Customers)
-    {
-
-        <div>
-             <fieldset>
-                 <legend>Customer List</legend>
-
-                 <div class="display-label">Customer Id</div>
-                 <div class="display-field">@customer2.Id</div>
-
-                 <div class="display-label">FirsName</div>
-                 <div class="display-field">@customer2.FirstName</div>
-
-                 <div class=" display-label">Last Name</div>
-                 <div class="display-field">@customer2.LastName</div>
-
-                 <div class=" display-label">Phone</div>
-                 <div class="display-field">@customer2.PhoneNumber</div>
-
-                 <div class=" display-label">Email</div>
-                 <div class="display-field">@customer2.Email</div>
-
-                 <div class=" display-label">Street1</div>
-                 <div class="display-field">@customer2.CompanyStreet1</div>
-
-                 <div class=" display-label">Street2</div>
-                 <div class="display-field">@customer2.CompanyStreet2</div>
-
-                 <div class=" display-label">City</div>
-                 <div class="display-field">@customer2.CompanyCity</div>
-
-                 <div class=" display-label">State</div>
-                 <div class="display-field">@customer2.CompanyState</div>
-
-                 <div class=" display-label">Postal Code</div>
-                 <div class="display-field">@customer2.CompanyPostalCode</div>
-
-                 <div class="button-group" style="float:right">
-                        @Html.ActionLink("Details", "Details", "Customer", new { id = customer2.Id }, new { @class = "small radius button" })
-                 </div>
-
-             </fieldset>
-        </div>
-    }*@

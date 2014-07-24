@@ -101,9 +101,9 @@
         <div class="form-actions no-color">
             @Html.HiddenFor(m => m.Id, new { @Value = Model.Id })
             @*<input type="hidden" value="@model.Id" name="Id" />*@
-            <input type="submit" value="Delete" name="Delete" class="alert button" />
             @*Html.ActionLink("Delete", "Delete", new { id = Model.Id }, new { @class = "alert button" })*@
-            @Html.ActionLink("Back to List", "Index", null, new { @class = "small radius button" })
+            @Html.ActionLink("Cancel", "Index", null, new { @class = "small radius button" })
+            <input type="submit" value="Delete" name="Delete" class="alert button" />
         </div>
     }
 </div>

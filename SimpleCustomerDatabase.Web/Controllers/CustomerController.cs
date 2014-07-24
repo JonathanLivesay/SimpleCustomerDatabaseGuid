@@ -114,7 +114,16 @@ namespace SimpleCustomerDatabase.Web.Controllers
 
             Customer originalCustomer = repo.Find(new FindById(id));
 
-            originalCustomer = customer;
+            originalCustomer.FirstName = customer.FirstName;
+            originalCustomer.LastName = customer.LastName;
+            originalCustomer.CompanyName = customer.CompanyName;
+            originalCustomer.Email = customer.Email;
+            originalCustomer.PhoneNumber = customer.PhoneNumber;
+            originalCustomer.CompanyStreet1 = customer.CompanyStreet1;
+            originalCustomer.CompanyStreet2 = customer.CompanyStreet2;
+            originalCustomer.CompanyCity = customer.CompanyCity;
+            originalCustomer.CompanyState = customer.CompanyState;
+            originalCustomer.CompanyPostalCode = customer.CompanyPostalCode;
 
             repo.Context.Commit();
 
