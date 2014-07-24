@@ -5,49 +5,83 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Customer View";
 }
+<div class="columns medium-10">
 
+    <table class="table table-striped table-hover">
+        <caption>Customer List</caption>
+        <thead>
+            <tr>
+                <th>Customer Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th></th>
+            </tr>
+        </thead>
+        @foreach (var customer1 in Model.Customers)
+        {
+        <tbody>
+            <tr>
+                <td>@customer1.Id</td>
+                <td>@customer1.FirstName</td>
+                <td>@customer1.LastName</td>
+                <td>@customer1.PhoneNumber</td>
+                <td>@customer1.Email</td>
+                <td>@Html.ActionLink("Details", "Details", "Customer", new { id = customer1.Id }, new { @class = "tiny radius button" })</td>
+            </tr>
+        </tbody>
+        }
+    </table>
 
-@foreach (var customer in Model.Customers)
-{
-    
-    <div>
-         <fieldset>
-             <legend>Customer List</legend>
+</div>
 
-             <div class="display-label">Customer Id</div>
-             <div class="display-field">@customer.Id</div>
+<div>
+    <hr>
+    <p>Trying something new above this line</p>
+</div>
 
-             <div class="display-label">FirsName</div>
-             <div class="display-field">@customer.FirstName</div>
+@*@foreach (var customer2 in Model.Customers)
+    {
 
-             <div class=" display-label">Last Name</div>
-             <div class="display-field">@customer.LastName</div>
+        <div>
+             <fieldset>
+                 <legend>Customer List</legend>
 
-             <div class=" display-label">Phone</div>
-             <div class="display-field">@customer.PhoneNumber</div>
+                 <div class="display-label">Customer Id</div>
+                 <div class="display-field">@customer2.Id</div>
 
-             <div class=" display-label">Email</div>
-             <div class="display-field">@customer.Email</div>
+                 <div class="display-label">FirsName</div>
+                 <div class="display-field">@customer2.FirstName</div>
 
-             <div class=" display-label">Street1</div>
-             <div class="display-field">@customer.CompanyStreet1</div>
+                 <div class=" display-label">Last Name</div>
+                 <div class="display-field">@customer2.LastName</div>
 
-             <div class=" display-label">Street2</div>
-             <div class="display-field">@customer.CompanyStreet2</div>
+                 <div class=" display-label">Phone</div>
+                 <div class="display-field">@customer2.PhoneNumber</div>
 
-             <div class=" display-label">City</div>
-             <div class="display-field">@customer.CompanyCity</div>
+                 <div class=" display-label">Email</div>
+                 <div class="display-field">@customer2.Email</div>
 
-             <div class=" display-label">State</div>
-             <div class="display-field">@customer.CompanyState</div>
+                 <div class=" display-label">Street1</div>
+                 <div class="display-field">@customer2.CompanyStreet1</div>
 
-             <div class=" display-label">Postal Code</div>
-             <div class="display-field">@customer.CompanyPostalCode</div>
+                 <div class=" display-label">Street2</div>
+                 <div class="display-field">@customer2.CompanyStreet2</div>
 
-             <div class="button-group" style="float:right">
-                    @Html.ActionLink("Details", "Details", "Customer", new { id = customer.Id }, new { @class = "small radius button" })
-             </div>
+                 <div class=" display-label">City</div>
+                 <div class="display-field">@customer2.CompanyCity</div>
 
-         </fieldset>
-    </div>
-}
+                 <div class=" display-label">State</div>
+                 <div class="display-field">@customer2.CompanyState</div>
+
+                 <div class=" display-label">Postal Code</div>
+                 <div class="display-field">@customer2.CompanyPostalCode</div>
+
+                 <div class="button-group" style="float:right">
+                        @Html.ActionLink("Details", "Details", "Customer", new { id = customer2.Id }, new { @class = "small radius button" })
+                 </div>
+
+             </fieldset>
+        </div>
+    }*@

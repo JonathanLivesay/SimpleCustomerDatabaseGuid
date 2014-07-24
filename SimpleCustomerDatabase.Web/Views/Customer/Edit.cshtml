@@ -8,7 +8,7 @@
 <h2>View</h2>
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Edit","Customer", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
     
@@ -101,7 +101,8 @@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Save" class="small radius button" />
-                <input type="submit" value="Cancel" class="small radius button" />
+                @Html.ActionLink("Cancel", "Index", null, new { @class = "small radius button"})
+                @*<input type="" value="Cancel" class="small radius button" />*@
                 @Html.ActionLink("Delete", "DeleteConfirm", new { id = Model.Id }, new { @class = "alert button" })
             </div>
         </div>

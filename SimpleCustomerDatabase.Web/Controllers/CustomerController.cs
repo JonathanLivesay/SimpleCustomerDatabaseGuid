@@ -17,7 +17,7 @@ namespace SimpleCustomerDatabase.Web.Controllers
         private Repository repo;
         private string connectionString;
 
-        private bool serverConnection = true;
+        private bool serverConnection = false;
 
         public CustomerController(Customer customer)
         {
@@ -98,7 +98,7 @@ namespace SimpleCustomerDatabase.Web.Controllers
         }
 
         // GET: Customer/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult EditGet(int id)
         {
             Customer customer = repo.Find(new FindById(id));
 
@@ -109,18 +109,27 @@ namespace SimpleCustomerDatabase.Web.Controllers
 
         // POST: Customer/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Customer customer)
         {
-            try
-            {
-                // TODO: Add update logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            Customer originalCustomer = repo.Find(new FindById(id));
+
+            originalCustomer = customer;
+
+            repo.Context.Commit();
+
+            return RedirectToAction("Index");
+
+            //try
+            //{
+            //    // TODO: Add update logic here
+
+            //    return RedirectToAction("Index");
+            //}
+            //catch
+            //{
+            //    return View();
+            //}
         }
 
         // GET: Customer/Delete/5
@@ -142,7 +151,7 @@ namespace SimpleCustomerDatabase.Web.Controllers
             
             repo.Context.Commit();
 
-            return View("Index");
+            return RedirectToAction("Index");
             
 
             //try
