@@ -10,6 +10,7 @@ using Highway.Data;
 
 namespace SimpleCustomerDatabase.Web.Controllers
 {
+    //[Authorize]
     public class CustomerController : Controller
     {
 
@@ -37,7 +38,7 @@ namespace SimpleCustomerDatabase.Web.Controllers
 
         
         // GET: Customer
-        [Authorize]
+
         public ActionResult Index()
         {
             var customerModel = new CustomerModels();
@@ -58,7 +59,6 @@ namespace SimpleCustomerDatabase.Web.Controllers
         }
 
         // GET: Customer/Details/5
-        [Authorize]
         public ActionResult Details(int id)
         {
             Customer customer = repo.Find(new FindById(id));
@@ -77,7 +77,6 @@ namespace SimpleCustomerDatabase.Web.Controllers
         }
 
         // POST: Customer/Create
-        [Authorize]
         [HttpPost]
         public ActionResult Create(Customer customer)
         {
@@ -101,7 +100,6 @@ namespace SimpleCustomerDatabase.Web.Controllers
         }
 
         // GET: Customer/Edit/5
-        [Authorize]
         public ActionResult EditGet(int id)
         {
             Customer customer = repo.Find(new FindById(id));
@@ -112,7 +110,6 @@ namespace SimpleCustomerDatabase.Web.Controllers
         }
 
         // POST: Customer/Edit/5
-        [Authorize]
         [HttpPost]
         public ActionResult Edit(int id, Customer customer)
         {
@@ -147,7 +144,6 @@ namespace SimpleCustomerDatabase.Web.Controllers
         }
 
         // GET: Customer/Delete/5
-        [Authorize]
         [HttpGet]
         public ActionResult DeleteConfirm(int id)
         {
@@ -157,7 +153,6 @@ namespace SimpleCustomerDatabase.Web.Controllers
         }
 
         // POST: Customer/Delete/5
-        [Authorize]
         [HttpPost]
         public ActionResult Delete(int id)
         {
