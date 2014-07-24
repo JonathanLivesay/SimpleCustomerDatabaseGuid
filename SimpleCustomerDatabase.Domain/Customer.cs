@@ -44,7 +44,7 @@ namespace SimpleCustomerDatabase.Domain
         [Display(Name = "Street2")]
         public string CompanyStreet2 { get; set; }
 
-        [StringLength(50, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(50, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 2)]
         [Display(Name = "City")]
         public string CompanyCity { get; set; }
 

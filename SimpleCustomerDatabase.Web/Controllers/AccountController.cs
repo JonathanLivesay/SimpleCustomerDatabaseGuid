@@ -11,6 +11,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Owin;
 using SimpleCustomerDatabase.Web.Models;
+using Highway.Data;
 
 namespace SimpleCustomerDatabase.Web.Controllers
 {
