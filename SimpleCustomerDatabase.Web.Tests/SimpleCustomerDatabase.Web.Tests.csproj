@@ -77,10 +77,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="When_A_Customer_Is_Created.cs" />
+    <Compile Include="PersistenceTests\When_A_Customer_Is_Created.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="When_A_Customer_Is_Deleted.cs" />
-    <Compile Include="When_A_Customer_Is_Updated.cs" />
+    <Compile Include="PersistenceTests\When_A_Customer_Is_Deleted.cs" />
+    <Compile Include="PersistenceTests\When_A_Customer_Is_Updated.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SimpleCustomerDatabase.Web\SimpleCustomerDatabase.Web.csproj">
@@ -94,7 +94,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ControllerTests\" />
-    <Folder Include="PersistenceTests\" />
+    <Folder Include="ModelTests\" />
+    <Folder Include="ViewTests\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
