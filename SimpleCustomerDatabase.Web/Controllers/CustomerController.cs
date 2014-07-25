@@ -48,10 +48,7 @@ namespace SimpleCustomerDatabase.Web.Controllers
 
             if (customerModel.Customers.Count == 0)
             {
-                customerModel.Customers.Add(Customer);
-                
-                foreach (var customer in customerModel.Customers)
-                    repo.Context.Add<Customer>(customer);
+                return RedirectToAction("First");
             } 
                
             repo.Context.Commit();
@@ -176,6 +173,11 @@ namespace SimpleCustomerDatabase.Web.Controllers
             //{
             //    return View();
             //}
+        }
+
+        public ActionResult First()
+        {
+            return View();
         }
     }
 }
