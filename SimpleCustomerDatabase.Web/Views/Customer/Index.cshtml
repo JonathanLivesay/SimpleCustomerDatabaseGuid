@@ -17,7 +17,7 @@
 </div>
 
 
-<div class="row">
+<div class="row show-for-medium-up">
     <table class="columns medium-12">
         <thead>
             <tr>
@@ -30,15 +30,15 @@
         </thead>
         @foreach (var customer1 in Model.Customers)
         {
-        <tbody>
-            <tr>
-                <td>@customer1.FirstName</td>
-                <td>@customer1.LastName</td>
-                <td>@customer1.PhoneNumber</td>
-                <td>@customer1.Email</td>
-                <td>@Html.ActionLink("Details", "Details", "Customer", new { id = customer1.Id }, new { @class = "tiny radius button" })</td>
-            </tr>
-        </tbody>
+            <tbody>
+                <tr>
+                    <td>@customer1.FirstName</td>
+                    <td>@customer1.LastName</td>
+                    <td>@customer1.PhoneNumber</td>
+                    <td>@customer1.Email</td>
+                    <td>@Html.ActionLink("Details", "Details", "Customer", new { id = customer1.Id }, new { @class = "tiny radius button" })</td>
+                </tr>
+            </tbody>
         }
     </table>
     <div class="row">
@@ -46,6 +46,23 @@
             <a href="/Customer/Create" class="small radius button">Create Customer</a>
         </div>
     </div>
-
 </div>
+
+<div class="show-for-small-only">
+    <div>
+        <div>
+            @foreach (var customer1 in Model.Customers)
+            {
+                <div class="panel radius">
+                    <h2>@customer1.FirstName @customer1.LastName</h2>
+                    <p style="float:right">@Html.ActionLink("Details", "Details", "Customer", new { id = customer1.Id }, new { @class = "tiny radius button" })</p>
+                    <h3>@customer1.CompanyCity</h3>
+                    <h4>@customer1.PhoneNumber</h4>
+                    <h4>@customer1.Email</h4>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
 
