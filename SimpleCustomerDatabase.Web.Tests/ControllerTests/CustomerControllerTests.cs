@@ -24,7 +24,7 @@ namespace SimpleCustomerDatabase.Web.Tests.ControllerTests
         [SetUp]
         public void SetUp()
         {
-            customerController = new CustomerController(customer1);
+
 
             viewResult = customerController.Index() as ViewResult;
         }
@@ -42,12 +42,7 @@ namespace SimpleCustomerDatabase.Web.Tests.ControllerTests
         public void When_No_Customer_Is_In_The_Model_Then_View_Result_Should_Be_The_First_Page()
         {
             Customer customer = null;
-            CustomerController controller = new CustomerController(customer);
-            
-            var result = controller.Index() as ViewResult;
 
-            Assert.IsNotNull(result);
-            //Assert.AreEqual("First", result);
         }
 
 

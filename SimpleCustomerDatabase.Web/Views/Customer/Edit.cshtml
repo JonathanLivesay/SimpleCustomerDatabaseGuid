@@ -101,9 +101,10 @@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 @Html.HiddenFor(m => m.Id, new { @Value = Model.Id })
-                <input type="submit" value="Save" name="Edit" class="small radius button" />
-                @Html.ActionLink("Cancel", "Index", null, new { @class = "small radius button"})
-                @Html.ActionLink("Delete", "DeleteConfirm", new { id = Model.Id }, new { @class = "alert button" })
+                <input type="submit" value="Save" name="Edit" class="success radius button" />
+                @*@Html.ActionLink("Cancel", "Index", null, new { @class = "radius button"})*@
+                @Html.ActionLink("Cancel", "Details", "Customer", new { id = Model.Id }, new { @class = "radius button" })
+                @Html.ActionLink("Delete", "DeleteConfirm", new { id = Model.Id }, new { @class = "radius button" })
             </div>
         </div>
     </div>

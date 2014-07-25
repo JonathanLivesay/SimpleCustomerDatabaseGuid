@@ -15,23 +15,13 @@ namespace SimpleCustomerDatabase.Web.Controllers
     {
 
         // private CustomerModels customerModel;
-        private Repository repo;
-        private string connectionString;
+        private IRepository repo;
 
-        private bool serverConnection = true;
-
-        public CustomerController(Customer customer)
+        public CustomerController(Customer customer, IRepository repo)
         {
             this.Customer = customer;
-
-            if (serverConnection == true)
-                connectionString = "Data Source=tcp:g72c0har2e.database.windows.net,1433;Initial Catalog=simplecustomerdatabase_db;User Id=DatabaseUser135@g72c0har2e;Password=13579DataPass!;";
-            else
-                connectionString = "Server=.;Database=SimpleCustomerDatabase_db;Integrated Security=true";
             
-            MappingConfig mappingConfig = new MappingConfig();
-            DataContext context = new DataContext(connectionString, mappingConfig);
-            repo = new Repository(context);
+            this.repo = repo;
         }
 
         public Customer Customer { get; set; }

@@ -8,6 +8,9 @@ using System.Web.Mvc;
 using System.Linq;
 using SimpleCustomerDatabase.Web.Controllers;
 using SimpleCustomerDatabase.Domain;
+using Highway.Data;
+using SimpleCustomerDatabase.Web.Persistence;
+using System.Configuration;
 
 
 namespace SimpleCustomerDatabase.Web.App_Start 
@@ -24,6 +27,9 @@ namespace SimpleCustomerDatabase.Web.App_Start
             var builder = new ContainerBuilder();
             builder.RegisterControllers(typeof(ResolverConfig).Assembly);
             builder.Register<SimpleCustomerDatabase.Domain.Customer>(c => instance);
+            builder.Register<IRepository>(cc => new Repository(cc.Resolve<IDataContext>()));
+            builder.Register<IMappingConfiguration>(cc => new MappingConfig());
+            builder.Register<IDataContext>(cc => new DataContext(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString, cc.Resolve<IMappingConfiguration>()));
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
 

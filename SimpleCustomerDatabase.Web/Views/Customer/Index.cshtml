@@ -10,7 +10,7 @@
 
 <div>
     <div>
-        <div class="panel text-center">
+        <div class="panel radius text-center">
             <p>Welcome to the Demo Customer Database</p>
         </div>
     </div>
@@ -53,15 +53,24 @@
         <div>
             @foreach (var customer1 in Model.Customers)
             {
-                <div class="panel radius">
+                <div class="row panel radius">
+                    <div>
+                        <p style="float:right">
+                            @Html.ActionLink("Details", "Details", "Customer", new { id = customer1.Id }, new { @class = "tiny radius button" })
+                        </p>
+                    </div>
+                    <div>
                     <h2>@customer1.FirstName @customer1.LastName</h2>
-                    <p style="float:right">@Html.ActionLink("Details", "Details", "Customer", new { id = customer1.Id }, new { @class = "tiny radius button" })</p>
                     <h3>@customer1.CompanyName</h3>
                     <h4>@customer1.PhoneNumber</h4>
                     <h4>@customer1.Email</h4>
+                    </div>
+
                 </div>
+                
             }
-        </div>
+
+        </div
     </div>
 </div>
 
