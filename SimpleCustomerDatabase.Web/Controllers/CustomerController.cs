@@ -10,7 +10,7 @@ using Highway.Data;
 
 namespace SimpleCustomerDatabase.Web.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class CustomerController : Controller
     {
 
@@ -18,7 +18,7 @@ namespace SimpleCustomerDatabase.Web.Controllers
         private Repository repo;
         private string connectionString;
 
-        private bool serverConnection = true;
+        private bool serverConnection = false;
 
         public CustomerController(Customer customer)
         {

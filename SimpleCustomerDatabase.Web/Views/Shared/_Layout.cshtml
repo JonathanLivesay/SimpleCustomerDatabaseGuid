@@ -35,6 +35,8 @@
                 {
                     id = "logoutForm", @*@class = "right"*@ }))
                 {
+                    @Html.AntiForgeryToken()
+                    
                     <ul class="off-canvas-list">
                         <li>
                             <label class="first">NAVIGATION</label>
