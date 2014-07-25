@@ -33,6 +33,7 @@ namespace SimpleCustomerDatabase.Domain
 
         [Required]
         [Phone]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Please enter a valid 10 digit phone number")]
         [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
 
