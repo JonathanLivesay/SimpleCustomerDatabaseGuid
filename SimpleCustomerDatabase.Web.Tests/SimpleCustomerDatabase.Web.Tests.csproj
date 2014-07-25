@@ -105,7 +105,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="ControllerTests\When_The_Index_Is_Run.cs" />
+    <Compile Include="ControllerTests\CustomerControllerTests.cs" />
+    <Compile Include="ModelTests\CustomerModelTests.cs" />
     <Compile Include="PersistenceTests\When_A_Customer_Is_Created.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PersistenceTests\When_A_Customer_Is_Deleted.cs" />
@@ -126,7 +127,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ModelTests\" />
     <Folder Include="ViewTests\" />
   </ItemGroup>
   <Choose>
