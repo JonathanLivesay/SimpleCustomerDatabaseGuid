@@ -25,7 +25,7 @@ namespace SimpleCustomerDatabase.Web.Controllers
             this.Customer = customer;
 
             if (serverConnection == true)
-                connectionString = "Data Source=tcp:vsv9sujxvr.database.windows.net,1433;Initial Catalog=simplecustomerdatabase_db;User ID=DatabaseUser135@vsv9sujxvr;Password=13579CustomerDatabase!";
+                connectionString = "Data Source=tcp:wur2d6bu0b.database.windows.net,1433;Initial Catalog=simplecustomerdatabase2_db;User ID=DatabaseUser135@wur2d6bu0b;Password=13579CustomerDatabase!";
             else
                 connectionString = "Server=.;Database=SimpleCustomerDatabase_db;Integrated Security=true";
             
