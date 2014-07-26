@@ -10,7 +10,7 @@ namespace SimpleCustomerDatabase.Domain
     public class Customer
     {
         public int Id { get; set; }
-        
+
         [Required]
         [StringLength(50, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 2)]
         [Display(Name = "First Name")]
@@ -32,8 +32,8 @@ namespace SimpleCustomerDatabase.Domain
         public string Email { get; set; }
 
         [Required]
-        [Phone]
-        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Please enter a valid 10 digit phone number")]
+        [DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid number")]
         [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
 
