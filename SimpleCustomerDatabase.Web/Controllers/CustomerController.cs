@@ -13,18 +13,16 @@ namespace SimpleCustomerDatabase.Web.Controllers
     [Authorize]
     public class CustomerController : Controller
     {
-
-        // private CustomerModels customerModel;
+        public Customer Customer { get; set; }
         private IRepository repo;
 
         public CustomerController(Customer customer, IRepository repo)
         {
             this.Customer = customer;
-            
             this.repo = repo;
         }
 
-        public Customer Customer { get; set; }
+
 
         
         // GET: Customer
@@ -46,11 +44,10 @@ namespace SimpleCustomerDatabase.Web.Controllers
         }
 
         // GET: Customer/Details/5
+        [HttpGet]
         public ActionResult Details(int id)
         {
             Customer customer = repo.Find(new FindById(id));
-
-            //return RedirectToAction("Edit", "Customer", customer);
 
             return View("Details", customer);
         }
@@ -72,21 +69,11 @@ namespace SimpleCustomerDatabase.Web.Controllers
 
             repo.Context.Commit();
 
-            return RedirectToAction("Index","Customer");
-
-            //try
-            //{
-            //    // TODO: Add insert logic here
-
-            //    return RedirectToAction("Index");
-            //}
-            //catch
-            //{
-            //    return View();
-            //}
+            return RedirectToAction("Index", "Customer");
         }
 
         // GET: Customer/Edit/5
+        [HttpGet]
         public ActionResult EditGet(int id)
         {
             Customer customer = repo.Find(new FindById(id));
@@ -151,16 +138,6 @@ namespace SimpleCustomerDatabase.Web.Controllers
 
             return RedirectToAction("Index");
             
-
-            //try
-            //{
-            //    // TODO: Add delete logic here
-
-            //    return RedirectToAction("Index");
-            //}
-            //catch
-            //{
-            //    return View();
             //}
         }
 
