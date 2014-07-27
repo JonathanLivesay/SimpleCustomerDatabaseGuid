@@ -7,91 +7,101 @@
 
 <h2>Details</h2>
 
-<div>
+<div class="panel radius">
     <h4>Customer</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </dt>
+    <div>
+        <div class="row">
+            <div class="columns medium-6">
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.FirstName)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.FirstName)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.LastName)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.LastName)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CompanyName)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.CompanyName)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CompanyName)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.CompanyName)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PhoneNumber)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.PhoneNumber)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.PhoneNumber)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.PhoneNumber)
+                    </dd>
+                </dl>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CompanyStreet1)
-        </dt>
+            <div class="columns medium-6">
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.CompanyStreet1)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CompanyStreet1)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.CompanyStreet1)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CompanyStreet2)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.CompanyStreet2)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CompanyStreet2)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.CompanyStreet2)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CompanyCity)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.CompanyCity)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CompanyCity)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.CompanyCity)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CompanyState)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.CompanyState)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CompanyState)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.CompanyState)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CompanyPostalCode)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.CompanyPostalCode)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CompanyPostalCode)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.CompanyPostalCode)
+                    </dd>
 
-    </dl>
+                </dl>
+            </div>
+        </div>
+    </div>
 </div>
 <p>
     @Html.ActionLink("Edit", "EditGet", new { id = Model.Id }, new {@class = "success radius button"})
