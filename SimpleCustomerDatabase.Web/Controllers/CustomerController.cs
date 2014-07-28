@@ -103,7 +103,7 @@ namespace SimpleCustomerDatabase.Web.Controllers
 
             repo.Context.Commit();
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Details", originalCustomer);
 
             //try
             //{
