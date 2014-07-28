@@ -13,17 +13,12 @@ namespace SimpleCustomerDatabase.Web.Controllers
     [Authorize]
     public class CustomerController : Controller
     {
-        public Customer Customer { get; set; }
         private IRepository repo;
 
-        public CustomerController(Customer customer, IRepository repo)
+        public CustomerController(IRepository repo)
         {
-            this.Customer = customer;
             this.repo = repo;
         }
-
-
-
         
         // GET: Customer
 
@@ -146,4 +141,5 @@ namespace SimpleCustomerDatabase.Web.Controllers
             return View();
         }
     }
+
 }

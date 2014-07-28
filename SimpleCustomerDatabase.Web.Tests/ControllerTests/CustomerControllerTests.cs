@@ -7,6 +7,8 @@ using System.Web.Mvc;
 using SimpleCustomerDatabase.Web.Controllers;
 using SimpleCustomerDatabase.Domain;
 using NUnit.Framework;
+using Highway.Data.Contexts;
+using Highway.Data;
 
 
 namespace SimpleCustomerDatabase.Web.Tests.ControllerTests
@@ -14,7 +16,8 @@ namespace SimpleCustomerDatabase.Web.Tests.ControllerTests
     [TestFixture]
     public class CustomerControllerTests
     {
-
+        private InMemoryDataContext context;
+        private IRepository repo;
         private ViewResult viewResult;
         private Customer customer1;
         private Customer customer2;
@@ -24,24 +27,23 @@ namespace SimpleCustomerDatabase.Web.Tests.ControllerTests
         [SetUp]
         public void SetUp()
         {
-
-
-            viewResult = customerController.Index() as ViewResult;
+            context = new InMemoryActiveDataContext();
+            repo = new Repository(context);
+            customerController = new CustomerController(repo);
         }
 
-        [Test]
-        public void When_A_Customer_Logs_In_They_Should_Go_To_The_Index_View()
+        [Test][Ignore]
+        public void If_There_Are_No_Customers_In_The_Database_Then_The_First_View_Will_Come_Up()
         {
-            ViewResult result = customerController.Index() as ViewResult;
+            ViewResult result = customerController.First() as ViewResult;
 
             Assert.IsNotNull(result);
-            Assert.AreEqual("", result.ViewName);
         }
 
-        [Test]
-        public void When_No_Customer_Is_In_The_Model_Then_View_Result_Should_Be_The_First_Page()
+        [Test][Ignore]
+        public void If_There_Is_A_Customer_In_The_Database_Then_We_Should_Get_The_Index_Of_the_Customer_Controller()
         {
-            Customer customer = null;
+            
 
         }
 
