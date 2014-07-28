@@ -11,8 +11,8 @@ namespace SimpleCustomerDatabase.Web.Controllers
         public ActionResult Index()
         {
 
-
-            return View();
+            return RedirectToAction("Index", "Customer");
+            //return View();
         }
 
         public ActionResult About()
