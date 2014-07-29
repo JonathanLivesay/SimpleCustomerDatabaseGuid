@@ -23,8 +23,6 @@ namespace SimpleCustomerDatabase.Web.Persistence
             modelBuilder.Entity<Customer>().Property(c => c.LastName).IsRequired();
             modelBuilder.Entity<Customer>().Property(c => c.FirstName).IsRequired();
             modelBuilder.Entity<Customer>().Property(c => c.Email).IsRequired();
-            modelBuilder.Entity<Customer>().Property(c => c.DateCreated).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            modelBuilder.Entity<Customer>().Property(c => c.DateUpdated).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed);
         }
 
     }

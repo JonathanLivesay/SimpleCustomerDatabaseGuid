@@ -32,8 +32,6 @@ namespace SimpleCustomerDatabase.Web.Controllers
             {
                 return RedirectToAction("First");
             } 
- 
-            repo.Context.Commit();
 
             customerModel.Customers.OrderBy(c => c.DateCreated);
             
@@ -52,8 +50,6 @@ namespace SimpleCustomerDatabase.Web.Controllers
         // GET: Customer/Create
         public ActionResult Create()
         {
-
-
             return View();
         }
 
@@ -64,8 +60,9 @@ namespace SimpleCustomerDatabase.Web.Controllers
 
             customer.DateCreated = DateTime.Now;
             customer.DateUpdated = DateTime.Now;
-            repo.Context.Add<Customer>(customer);
 
+            repo.Context.Add<Customer>(customer);
+            
             repo.Context.Commit();
 
             return RedirectToAction("Index", "Customer");
@@ -83,8 +80,8 @@ namespace SimpleCustomerDatabase.Web.Controllers
         // POST: Customer/Edit/5
         [HttpPost]
         public ActionResult Edit(Guid id, Customer customer)
-        {
-
+        { 
+            
             Customer originalCustomer = repo.Find(new FindById(id));
 
             originalCustomer.FirstName = customer.FirstName;
