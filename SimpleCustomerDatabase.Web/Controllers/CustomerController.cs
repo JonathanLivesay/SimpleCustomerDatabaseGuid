@@ -32,15 +32,17 @@ namespace SimpleCustomerDatabase.Web.Controllers
             {
                 return RedirectToAction("First");
             } 
-               
+ 
             repo.Context.Commit();
+
+            customerModel.Customers.OrderBy(c => c.DateCreated);
             
             return View(customerModel);
         }
 
         // GET: Customer/Details/5
         [HttpGet]
-        public ActionResult Details(int id)
+        public ActionResult Details(Guid id)
         {
             Customer customer = repo.Find(new FindById(id));
 
@@ -60,6 +62,8 @@ namespace SimpleCustomerDatabase.Web.Controllers
         public ActionResult Create(Customer customer)
         {
 
+            customer.DateCreated = DateTime.Now;
+            customer.DateUpdated = DateTime.Now;
             repo.Context.Add<Customer>(customer);
 
             repo.Context.Commit();
@@ -69,18 +73,16 @@ namespace SimpleCustomerDatabase.Web.Controllers
 
         // GET: Customer/Edit/5
         [HttpGet]
-        public ActionResult EditGet(int id)
+        public ActionResult EditGet(Guid id)
         {
             Customer customer = repo.Find(new FindById(id));
 
             return View("Edit", customer);
-
-
         }
 
         // POST: Customer/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, Customer customer)
+        public ActionResult Edit(Guid id, Customer customer)
         {
 
             Customer originalCustomer = repo.Find(new FindById(id));
@@ -95,6 +97,7 @@ namespace SimpleCustomerDatabase.Web.Controllers
             originalCustomer.CompanyCity = customer.CompanyCity;
             originalCustomer.CompanyState = customer.CompanyState;
             originalCustomer.CompanyPostalCode = customer.CompanyPostalCode;
+            originalCustomer.DateUpdated = DateTime.Now;
 
             repo.Context.Commit();
 
@@ -114,7 +117,7 @@ namespace SimpleCustomerDatabase.Web.Controllers
 
         // GET: Customer/Delete/5
         [HttpGet]
-        public ActionResult DeleteConfirm(int id)
+        public ActionResult DeleteConfirm(Guid id)
         {
             var customer = repo.Find(new FindById(id));
 
@@ -123,7 +126,7 @@ namespace SimpleCustomerDatabase.Web.Controllers
 
         // POST: Customer/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id)
+        public ActionResult Delete(Guid id)
         {
             var customer = repo.Find(new FindById(id));
 

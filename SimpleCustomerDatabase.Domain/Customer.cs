@@ -9,7 +9,7 @@ namespace SimpleCustomerDatabase.Domain
 {
     public class Customer
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [Required]
         [StringLength(50, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 2)]
@@ -56,5 +56,9 @@ namespace SimpleCustomerDatabase.Domain
         [StringLength(10, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 5)]
         [Display(Name = "Zip Code")]
         public string CompanyPostalCode { get; set; }
+
+        public DateTime DateCreated { get; set; }
+
+        public DateTime DateUpdated { get; set; }
     }
 }

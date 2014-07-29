@@ -9,7 +9,7 @@ namespace SimpleCustomerDatabase.Web.Persistence
 {
     public class FindById : Scalar<Customer>
     {
-        public FindById(int id)
+        public FindById(Guid id)
         {
             ContextQuery = c => c.AsQueryable<Customer>()
                 .First(e => e.Id == id);
